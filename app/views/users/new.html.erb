@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+<h1><font color="red"><%= flash[:notice] %></font></h1>
+<% end %>
+
+<h1>Create a New User</h1>
+<%= form_for @user, url: users_path, method: :post do |f| %>
+Username: <%= f.text_field :name %>
+Password: <%= f.password_field :password %>
+Password Confirmation: <%= f.password_field :password_confirmation %>
+<%= f.submit %>
+<% end %>
